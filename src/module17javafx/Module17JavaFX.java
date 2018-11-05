@@ -34,17 +34,21 @@ public class Module17JavaFX extends Application {
         launch(args);
     }
 
+    /* Chapter 1:*/
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("fxml_example.fxml"));
-        
-        Scene scene = new Scene(root, 300, 275);
-        
-        primaryStage.setTitle("FXML Welcome");
-        primaryStage.setScene(scene);
+        primaryStage.setTitle("Hello World");
+
+        final Button button = new Button("Say 'Hello World'");
+        button.setOnAction(event -> {
+            System.out.println("Hello World!");
+        });
+
+        final StackPane root = new StackPane(button);
+        primaryStage.setScene(new Scene(root, 300, 250));
         primaryStage.show();
     }
-    
+
     /* Chapter 2:*/
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -81,18 +85,15 @@ public class Module17JavaFX extends Application {
         primaryStage.show();
     }
 
-    /* Chapter 1:*/
+    /* Chapter 4:*/
     @Override
     public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("Hello World");
+        Parent root = FXMLLoader.load(getClass().getResource("fxml_example.fxml"));
 
-        final Button button = new Button("Say 'Hello World'");
-        button.setOnAction(event -> {
-            System.out.println("Hello World!");
-        });
+        Scene scene = new Scene(root, 300, 275);
 
-        final StackPane root = new StackPane(button);
-        primaryStage.setScene(new Scene(root, 300, 250));
+        primaryStage.setTitle("FXML Welcome");
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 }
