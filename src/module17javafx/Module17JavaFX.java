@@ -88,9 +88,9 @@ public class Module17JavaFX extends Application {
     /* Chapter 4:*/
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("fxml_example.fxml"));
+        final Parent root = FXMLLoader.load(getClass().getResource("fxml_example.fxml"));
 
-        Scene scene = new Scene(root, 300, 275);
+        final Scene scene = new Scene(root, 300, 275);
 
         primaryStage.setTitle("FXML Welcome");
         primaryStage.setScene(scene);
